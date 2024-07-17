@@ -1,0 +1,144 @@
+#!/usr/bin/perl
+# Wordlist Generator #
+print "Wordlist Generator\n";
+print "Wordlist file: ";
+$path = <STDIN>;
+chomp $path;
+#Open file
+open (pa, '>', $path) or die "Could not create file!\n";
+ 
+ 
+#Usr Input
+       print "Character Set: ";
+       $charset = <STDIN>;
+       chomp $charset;
+ 
+       print "How many words to generate: ";
+       $inputted = <STDIN>;
+       chomp $inputted;
+ 
+       print "Word Length(s): ";
+       $a = <STDIN>;
+       chomp $a;
+####
+ 
+#Character Set#
+if($charset eq 'alphanumeric') {
+my $p;
+my @char = (('A'..'Z'), (0..9));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'mixalpha') {
+my $p;
+my @char = (('A'..'Z'), ('a'..'z'));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'alpha') {
+    my $p;
+my @char = (('A'..'Z'));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'lcalpha') {
+my $p;
+my @char = (('a'..'z'));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'lcalphanumeric') {
+my $p;
+my @char = (('a'..'z'), (0..9));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'lcalphanumeric-symbol14') {
+my $p;
+my @char = (('a'..'z') ,(0..9),'!','@','#','$','%','^','&','*','(',')','-','_','+','=');
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'numeric') {
+my $p;
+my @char = ((0..9));
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'alphanumeric-symbol14') {
+my $p;
+my @char = (('A'..'Z'), ('a'..'z'), (0..9),'!','@','#','$','%','^','&','*','(',')','-','_','+','=');
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+if($charset eq 'all') {
+my $p;
+my @char = (('A'..'Z'), (0..9),'!','@','#','$','%','^','&','*','(',')','-','_','+','=','~','`','[',']','{','}','|', "/", ":" ,";",'"',"'",'<','>',",",".","?","/");
+my $ran = $#char + 1;
+foreach (1..$inputted) {
+for (1..int($a)) {
+    $p = $char[int(rand($ran))];
+    print pa $p ;
+ 
+}
+print pa "\n";
+}
+}
+ 
+###############
